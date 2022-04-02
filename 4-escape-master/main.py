@@ -24,10 +24,10 @@ while lines[current["y"]][current["x"]] != "H":
     current["y"] += 1
     res = res + "D"
   elif  current["x"] -1 > 0 and lines[current["y"]][current["x"]-1] != "#":
-    current["y"] += 1
+    current["y"] -= 1
     res = res + "L"
   elif  current["y"] -1 < 0 and lines[current["y"]-1][current["x"]] != "#":
-    current["y"] += 1
+    current["y"] -= 1
     res = res + "U"
   print(res)
 
