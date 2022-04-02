@@ -10,6 +10,16 @@ public class Client
   private DataInputStream input = null;
   private DataOutputStream out	 = null;
 
+  private void print_maze(String[][] maze) {
+    for (String[] row : maze) {
+      for (String col : row) {
+        System.out.print(col + " ");
+      }
+      System.out.println();
+    }
+    System.out.println();
+  }
+
   private boolean is_valid_position(String[][] maze, int pos_r, int pos_c) {
     return pos_r >= 0 && pos_r < maze.length && pos_c >= 0 && pos_c < maze[0].length && "OH".contains(maze[pos_r][pos_c]);
   }
@@ -25,6 +35,9 @@ public class Client
       pos_c = pos.second();
 
       if (maze[pos_r][pos_c].equals("H")) {
+        print_maze(maze);
+        System.out.println(result);
+        //out.writeBytes(result);
         return true;
       }
       if (maze[pos_r][pos_c].equals("X")) {
@@ -48,14 +61,12 @@ public class Client
         stack.add(new Pair<>(pos_r, pos_c + 1));
         result += "R";
       }
-    }
+      print_maze(maze);
+      System.out.println(result);
 
-    for (int i = 0; i < result.length(); i++) {
-      out.write(result.charAt(i));
     }
-
+    System.out.println("False");
     return false;
-
   }
 
   // constructor to put ip address and port
@@ -81,6 +92,16 @@ public class Client
       System.out.println(i);
     }
 
+    String[][] test_maze = new String[6][6];
+    test_maze[0] = "L # # # # #".split(" ");
+    test_maze[1] = "O O O # O #".split(" ");
+    test_maze[2] = "# O # # O #".split(" ");
+    test_maze[3] = "O O # O O O".split(" ");
+    test_maze[4] = "O # # O # O".split(" ");
+    test_maze[5] = "O O O O O H".split(" ");
+
+    solve_maze(test_maze);
+
 
     // string to read message from input
     String line = "";
@@ -102,7 +123,7 @@ public class Client
 
 
     try {
-      out.write('y');
+      out.writeBytes("y");
     } catch (IOException e) {
       e.printStackTrace();
     }
@@ -119,7 +140,7 @@ public class Client
       try
       {
         maze[row] = input.readLine().split(" ");
-        System.out.println(maze[row]);
+        //System.out.println(maze[row]);
       }
       catch(IOException i)
       {
@@ -127,9 +148,9 @@ public class Client
       }
     }
 
-    solve_maze(maze);
+    //solve_maze(maze);
 
-    for (int j = 0; j < 22; j++)
+    for (int j = 0; j < 5; j++)
     {
       try
       {

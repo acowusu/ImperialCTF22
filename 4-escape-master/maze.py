@@ -64,7 +64,7 @@ def solve_maze(maze, start):
     print(str)
     return False
 
-maze = load_maze("maze.txt")
+maze = load_maze("main.txt")
 maze = convert_maze(maze)
 print_maze(maze)
 start = find_start(maze)
