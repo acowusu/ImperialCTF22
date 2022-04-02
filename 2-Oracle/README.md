@@ -22,6 +22,7 @@ Looking at the commit history revealed:
 ```python
 random.seed(session['REDACTED_FOR_PRIVACY'])     
 ```
+
 Still without any indication of the seed being used. I Could not progress much further directly.
 
 Following a new angle of attack, I I focussed on how the page functioned:
@@ -136,3 +137,33 @@ def generate_page(data):
    {data}
   """
 ```
+
+## Decoding the session cookie
+
+Having talked with teamates we realised that the session variealbe was accessable to the client and after decoding it we could see the contents
+:
+We used the `flask-cookie-decode`  cli to decode it:
+
+`fcd decode .eJwNyTsKQkEMRuG9pE4xef7J3YpYCDLtiKNYiHv3wik-OF963Pb-rOedDpprEdN-veek4-KFDoEbA9ouimTtgJaosLVFwSF8LosQc0aqWHmANTKz4cHwHBhZydVD5bSxhJ2l9fX3BzdsHgc.YkhRtQ.7j9xUzHdj_QCiVjvfc9C8qe0TIg``
+
+This gave us the contents of stuff
+
+``` json
+{
+  "password": "foo",
+  "stuff": [
+    487951743,
+    772941276,
+    295728121,
+    393587471,
+    941355134,
+    762138457,
+    256669745,
+    746070686,
+    890210703,
+    153153639
+  ]
+}
+```
+
+we then submitted the last number as our guess and got the flag
