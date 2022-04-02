@@ -15,15 +15,20 @@ I noticed a comment in the source of the page:
  session['stuff'] = random.sample(range(10000, 1000000000), 10)
 ```
 
-I Hypothosised that the deployed version may still use a custom random seed making a brute force attack possible.
+My guess that the deployed version may still use a custom random seed making a brute force attack possible.
 
 Looking at the commit history revealed:
 
 ```python
 random.seed(session['REDACTED_FOR_PRIVACY'])     
 ```
+Still without any indication of the seed being used. I Could not progress much further directly.
 
-## overall logic of program
+Following a new angle of attack, I I focussed on how the page functioned:
+
+```python
+
+## Overall logic of program
 
 We know that the flag is:
 
@@ -33,29 +38,39 @@ app.secret_key = "REDACTED_FOR_PRIVACY"
 
 flag = "ICTF\{REDACTED_FOR_PRIVACY\}"
 ```
-The main interesting stuff is hereL
+
+The main interesting stuff is here
 
 ```python
 @app.route('/', methods = ['GET', 'POST'])
 def index():
+```
+
+The program ensures users are logged in by checking the session variable.
+
+```python
  if 'password' not in session:
   data = "You are not logged in. <br><a href = '/login'>" + "Click here to log in.</a>"
   return generate_page(data)
+```
 
+If the user is logged in they are asked for a number which is POSTed to the server
+
+```python
  if request.method == 'GET':
   data = '''
-   <h1> <b>Welcome, adventurer!</b></h1>
-   <p> "<b>The Oracle</b> has been expecting you," the voice says. You look to your friends and then up and see a giant crystall ball. <br/>
-    "<b>The Oracle</b> is thinking of a number. Guess right and you live to hack another day. Guess wrong and you all
-    shall suffer." </p>
-   <p> You look again to your friends and realise that they are lost. <b>The Oracle</b> only speaks in your mind. </p>
+   ...
    <form action = "" method = "post">
     <p> <input type = text name = guess /> </p>
     <p> <input type = submit value = Guess /> <p>
    </form>
   '''
   return generate_page(data)
+  ```
 
+When recieving a guess we compare it  to the last of the random numbers generated and if they are equal we return the flag.
+
+```python
  if request.method == 'POST':
   attempts_left = len(session['stuff'])
   if attempts_left == 0:
@@ -69,16 +84,10 @@ def index():
   session['stuff'] = options
 
   if guess.isnumeric() and int(guess) == actual:
-   data = f"""
-    <h4> The earth shatters around you as <b>The Oracle</b> hisses and explodes into a bright light. You close your eyes until you feel the blinding light fade away. <b> The Oracle </b> has dissapeared and left a flag behind. </h4>
-    <h4>
-    {flag} </br>
-    <b>The Oracle</b> has been defeated! GG! </h4>"""
+   data = f"""...  {flag} """
    return generate_page(data)
   else:
    data = f'''
-    <h1> Welcome! The Oracle has been expecting you. </h1>
-    <h3> The Oracle is thinking of a number. Can you guess it? </p>
     <form action = "" method = "post">
      <p> <input type = text name = guess /> </p>
      <p> <input type = submit value = Guess /> <p>
@@ -86,6 +95,7 @@ def index():
     <p> Incorrect. <b>The Oracle</b> will remember this. You have {attempts_left - 1} tries.</p>
    '''
    return generate_page(data)
+```
 
 `login` does different things depending on the request method.
 
@@ -93,8 +103,8 @@ when a GET request is made, it returns the login page.
 
 when a POST request is made:
 
-1. it sets the session['password'] to the password given by the user
-2. it sets the session['stuff'] to a list of 10 random numbers
+1. it sets the `session['password']` to the password given by the user
+2. it sets the `session['stuff']` to a list of 10 random numbers
 3. it redirects to the index page
 
 ```python
