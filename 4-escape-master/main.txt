@@ -1,0 +1,6 @@
+L # # # # #
+O O O # O #
+# O # # O #
+O O # O O O
+O # # O # O
+O O O O O H
