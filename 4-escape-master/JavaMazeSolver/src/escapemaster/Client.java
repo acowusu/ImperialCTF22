@@ -2,6 +2,9 @@ package escapemaster;
 import java.net.*;
 import java.io.*;
 import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Deque;
+import java.util.List;
 
 public class Client
 {
@@ -24,20 +27,36 @@ public class Client
     return pos_r >= 0 && pos_r < maze.length && pos_c >= 0 && pos_c < maze[0].length && "OH".contains(maze[pos_r][pos_c]);
   }
 
+  private String backtrackPath(Coordinate cur) {
+    String path = "";
+    Coordinate curr = cur.getParent();
+    Coordinate prev = cur;
+
+    while (curr != null) {
+      path = curr.getMovement(prev) + path;
+
+      prev = curr;
+      curr = curr.getParent();
+    }
+
+    return path;
+  }
+
   public boolean solve_maze(String[][] maze) throws IOException {
-    ArrayDeque<Pair<Integer, Integer>> stack = new ArrayDeque<>();
-    String result = "";
-    stack.add(new Pair<>(0, 0));
+    ArrayDeque<Coordinate> stack = new ArrayDeque<>();
+    stack.add(new Coordinate(0, 0));
     int pos_r, pos_c;
+    List<Pair<Integer, Integer>> visited = new ArrayList<>();
     while (!stack.isEmpty()) {
-      Pair<Integer, Integer> pos = stack.pop();
-      pos_r = pos.first();
-      pos_c = pos.second();
+      Coordinate pos = stack.pop();
+      pos_r = pos.getCoordY();
+      pos_c = pos.getCoordX();
 
       if (maze[pos_r][pos_c].equals("H")) {
         print_maze(maze);
+        String result = backtrackPath(pos);
         System.out.println(result);
-        //out.writeBytes(result);
+        out.writeBytes(result);
         return true;
       }
       if (maze[pos_r][pos_c].equals("X")) {
@@ -46,24 +65,30 @@ public class Client
 
       maze[pos_r][pos_c] = "X";
       if (is_valid_position(maze, pos_r - 1, pos_c)) {
-        stack.add(new Pair<>(pos_r - 1, pos_c));
-        result += "U";
+        Coordinate nextPos = new Coordinate(pos_c, pos_r - 1);
+        nextPos.setParent(pos);
+        stack.add(nextPos);
+        //result += "U";
       }
       if (is_valid_position(maze, pos_r + 1, pos_c)) {
-        stack.add(new Pair<>(pos_r + 1, pos_c));
-        result += "D";
+        Coordinate nextPos = new Coordinate(pos_c, pos_r + 1);
+        nextPos.setParent(pos);
+        stack.add(nextPos);
+        //result += "D";
       }
       if (is_valid_position(maze, pos_r, pos_c - 1)) {
-        stack.add(new Pair<>(pos_r, pos_c - 1));
-        result += "L";
+        Coordinate nextPos = new Coordinate(pos_c - 1, pos_r);
+        nextPos.setParent(pos);
+        stack.add(nextPos);
+        //result += "L";
       }
       if (is_valid_position(maze, pos_r, pos_c + 1)) {
-        stack.add(new Pair<>(pos_r, pos_c + 1));
-        result += "R";
+        Coordinate nextPos = new Coordinate(pos_c + 1, pos_r);
+        nextPos.setParent(pos);
+        stack.add(nextPos);
+        //result += "R";
       }
-      print_maze(maze);
-      System.out.println(result);
-
+      //print_maze(maze);
     }
     System.out.println("False");
     return false;
@@ -92,6 +117,7 @@ public class Client
       System.out.println(i);
     }
 
+    /*
     String[][] test_maze = new String[6][6];
     test_maze[0] = "L # # # # #".split(" ");
     test_maze[1] = "O O O # O #".split(" ");
@@ -101,6 +127,8 @@ public class Client
     test_maze[5] = "O O O O O H".split(" ");
 
     solve_maze(test_maze);
+
+     */
 
 
     // string to read message from input
@@ -148,7 +176,8 @@ public class Client
       }
     }
 
-    //solve_maze(maze);
+    print_maze(maze);
+    solve_maze(maze);
 
     for (int j = 0; j < 5; j++)
     {
