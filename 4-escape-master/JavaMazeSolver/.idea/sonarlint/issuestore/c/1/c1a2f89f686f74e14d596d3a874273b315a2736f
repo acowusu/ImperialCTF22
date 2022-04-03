@@ -1,0 +1,31 @@
+
+m
+java:S1149"PReplace the synchronized class "Stack" by an unsynchronized one such as "Deque".(ã¦Ò8‚ãÅæş/
+A
+java:S1659-"Declare "j" on a separate line.(á”æåşÿÿÿÿ8ˆãÅæş/
+Z	java:S106I"9Replace this use of System.out or System.err by a logger.(Ì„îÔûÿÿÿÿ8ŠãÅæş/
+L
+java:S1197o"*Move the array designators [] to the type.(¡şÏÖøÿÿÿÿ8ãÅæş/
+Z	java:S106~"9Replace this use of System.out or System.err by a logger.(åÖ”ÿÿÿÿÿ8ãÅæş/
+[	java:S106€"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ8ãÅæş/
+V	java:S106‚"9Replace this use of System.out or System.err by a logger.(¨€—8ãÅæş/
+v
+java:S2293W"YReplace the type specification in this constructor call with the diamond operator ("<>").(§È°Ú8ãÅæş/
+Q
+java:S1066Y"/Merge this if statement with the enclosing one.(õú—”ûÿÿÿÿ8‘ãÅæş/
+Q
+java:S1066^"/Merge this if statement with the enclosing one.(ÉÕÉ’üÿÿÿÿ8‘ãÅæş/
+L
+java:S1066c"/Merge this if statement with the enclosing one.(¹»Ÿœ8‘ãÅæş/
+L
+java:S1066h"/Merge this if statement with the enclosing one.(ùûšÃ8‘ãÅæş/
+9
+java:S16431"Use a StringBuilder instead.(Õü—8’ãÅæş/
+>
+java:S16436"Use a StringBuilder instead.(§Ó…Éşÿÿÿÿ8’ãÅæş/
+9
+java:S1643;"Use a StringBuilder instead.(…è¯„8’ãÅæş/
+9
+java:S1643@"Use a StringBuilder instead.(æ©ˆ²8’ãÅæş/
+5
+java:S1700"Rename field "maze"(¶õ°Íûÿÿÿÿ8“ãÅæş/

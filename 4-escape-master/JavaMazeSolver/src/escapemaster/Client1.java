@@ -52,7 +52,8 @@ public class Client1
         //print_maze(maze);
         String result = backtrackPath(pos);
         System.out.println(result);
-        out.writeBytes(result);
+        out.writeChars(result);
+        out.flush();
         return true;
       }
       if (maze[pos_r][pos_c].equals("X")) {
@@ -148,6 +149,7 @@ public class Client1
 
     try {
       out.writeBytes("y");
+      out.flush();
     } catch (IOException e) {
       e.printStackTrace();
     }

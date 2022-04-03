@@ -1,0 +1,57 @@
+
+c	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ì»™¨
+N	java:S106"9Replace this use of System.out or System.err by a logger.(ƒ¾Æ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ
+c	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×úõ•
+c	java:S100*"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(º“ğŸ
+>
+java:S1659-"#Declare "pos_c" on a separate line.(æ÷©ÿÿÿÿÿ
+Q	java:S1254"<This block of commented-out lines of code should be removed.(§ıü¹
+S	java:S1066"9Replace this use of System.out or System.err by a logger.(®ıáëûÿÿÿÿ
+Q	java:S125D"<This block of commented-out lines of code should be removed.(—à¥ê
+Q	java:S125J"<This block of commented-out lines of code should be removed.(¼ËïÖ
+Q	java:S125P"<This block of commented-out lines of code should be removed.(¥Èğú
+Q	java:S125V"<This block of commented-out lines of code should be removed.(ß‚ÅÉ
+Q	java:S125X"<This block of commented-out lines of code should be removed.(§ıü¹
+S	java:S106Z"9Replace this use of System.out or System.err by a logger.(°§ÄÎúÿÿÿÿ
+g
+java:S3776_"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(‡Ù7
+S	java:S106d"9Replace this use of System.out or System.err by a logger.(´áÀŠÿÿÿÿÿ
+N	java:S106n"9Replace this use of System.out or System.err by a logger.(Âæ“ú
+S	java:S106r"9Replace this use of System.out or System.err by a logger.(´‹¹öşÿÿÿÿ
+V	java:S125v"<This block of commented-out lines of code should be removed.(³®Œ‹üÿÿÿÿ
+R	java:S125‡"<This block of commented-out lines of code should be removed.(Ÿ© Ã
+G
+java:S1874Œ"0Remove this use of "readLine"; it is deprecated.(€èü
+T	java:S106"9Replace this use of System.out or System.err by a logger.(ñ—¸½úÿÿÿÿ
+T	java:S106‘"9Replace this use of System.out or System.err by a logger.(´‹¹öşÿÿÿÿ
+G
+java:S1874"0Remove this use of "readLine"; it is deprecated.(€èü
+R	java:S125£"<This block of commented-out lines of code should be removed.(”¨ô¤
+R	java:S125ª"<This block of commented-out lines of code should be removed.(ôÑêØ
+L
+java:S1874¯"0Remove this use of "readLine"; it is deprecated.(®àÅòşÿÿÿÿ
+R	java:S125±"<This block of commented-out lines of code should be removed.(íÆğ
+T	java:S106¹"9Replace this use of System.out or System.err by a logger.(´‹¹öşÿÿÿÿ
+G
+java:S1874Á"0Remove this use of "readLine"; it is deprecated.(€èü
+T	java:S106Â"9Replace this use of System.out or System.err by a logger.(ñ—¸½úÿÿÿÿ
+T	java:S106Æ"9Replace this use of System.out or System.err by a logger.(´‹¹öşÿÿÿÿ
+G
+java:S1874Ñ"0Remove this use of "readLine"; it is deprecated.(€èü
+T	java:S106Ò"9Replace this use of System.out or System.err by a logger.(ñ—¸½úÿÿÿÿ
+T	java:S106Ö"9Replace this use of System.out or System.err by a logger.(´‹¹öşÿÿÿÿ
+T	java:S106ã"9Replace this use of System.out or System.err by a logger.(´‹¹öşÿÿÿÿ
+V
+java:S1854è":Remove this useless assignment to local variable "client".(È¾şÿÿÿÿ
+F
+java:S1197ç"*Move the array designators [] to the type.(²Á€œüÿÿÿÿ
+G
+java:S1481è"+Remove this unused "client" local variable.(È¾şÿÿÿÿ
+f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×úõ•
+f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×úõ•
+k	java:S117-"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æ÷©ÿÿÿÿÿ
+k	java:S117-"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æ÷©ÿÿÿÿÿ
+7
+java:S1643!"Use a StringBuilder instead.(¼‚ò¾úÿÿÿÿ

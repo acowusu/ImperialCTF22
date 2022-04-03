@@ -52,7 +52,7 @@ public class Client2
         //print_maze(maze);
         String result = backtrackPath(pos);
         System.out.println(result);
-        out.writeBytes(result);
+        out.writeChars(result);
         return true;
       }
       if (maze[pos_r][pos_c].equals("X")) {
@@ -242,9 +242,7 @@ public class Client2
   }
 
   public static void main(String args[]) throws IOException {
-    for (int i = 0; i < 1000; i++) {
-      new Client2("192.168.125.100", 9003);
-    }
+    Client2 client2 = new Client2("192.168.125.100", 9003);
   }
 }
 
