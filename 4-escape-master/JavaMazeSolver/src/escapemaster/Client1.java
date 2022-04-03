@@ -2,11 +2,8 @@ package escapemaster;
 import java.net.*;
 import java.io.*;
 import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Deque;
-import java.util.List;
 
-public class Client
+public class Client1
 {
   // initialize socket and input output streams
   private Socket socket		 = null;
@@ -46,14 +43,13 @@ public class Client
     ArrayDeque<Coordinate> stack = new ArrayDeque<>();
     stack.add(new Coordinate(0, 0));
     int pos_r, pos_c;
-    List<Pair<Integer, Integer>> visited = new ArrayList<>();
     while (!stack.isEmpty()) {
       Coordinate pos = stack.pop();
       pos_r = pos.getCoordY();
       pos_c = pos.getCoordX();
 
       if (maze[pos_r][pos_c].equals("H")) {
-        print_maze(maze);
+        //print_maze(maze);
         String result = backtrackPath(pos);
         System.out.println(result);
         out.writeBytes(result);
@@ -95,7 +91,7 @@ public class Client
   }
 
   // constructor to put ip address and port
-  public Client(String address, int port) throws IOException {
+  public Client1(String address, int port) throws IOException {
     // establish a connection
     try
     {
@@ -161,6 +157,13 @@ public class Client
 
     String[][] maze = new String[50][50];
     maze[0] = line.split(" ");
+    /*
+    for (int i = 0; i < maze[0].length; i++) {
+      System.out.print(maze[0][i] + " ");
+    }
+    System.out.println();
+
+     */
 
     //while (!line.equals("Hurry! We only have a few seconds to spare!")) {
     for (int row = 1; row < 50; row++) {
@@ -168,7 +171,25 @@ public class Client
       try
       {
         maze[row] = input.readLine().split(" ");
-        //System.out.println(maze[row]);
+        /*
+        for (int i = 0; i < maze[row].length; i++) {
+          System.out.print(maze[row][i] + " ");
+        }
+        System.out.println();
+         */
+      }
+      catch(IOException i)
+      {
+        System.out.println(i);
+      }
+    }
+
+    for (int j = 0; j < 2; j++)
+    {
+      try
+      {
+        line = input.readLine();
+        System.out.println(line);
       }
       catch(IOException i)
       {
@@ -206,7 +227,7 @@ public class Client
   }
 
   public static void main(String args[]) throws IOException {
-    Client client = new Client("192.168.125.100", 9003);
+    Client1 client = new Client1("192.168.125.100", 9003);
   }
 }
 
