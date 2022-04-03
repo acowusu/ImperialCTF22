@@ -1,0 +1,219 @@
+Starting Nmap 7.92 ( https://nmap.org ) at 2022-04-03 01:45 BST
+Nmap scan report for 192.168.125.100
+Host is up (0.063s latency).
+Not shown: 65525 closed tcp ports (conn-refused)
+PORT     STATE SERVICE     VERSION
+22/tcp   open  ssh         OpenSSH 7.9 (protocol 2.0)
+| ssh-hostkey:
+|   2048 65:24:75:85:77:05:5f:41:18:81:d1:62:7a:65:c3:b3 (RSA)
+|   256 35:77:82:7f:b0:fb:de:4d:f8:21:f4:ed:aa:b5:b1:81 (ECDSA)
+|_  256 b4:89:fd:22:48:b6:f0:3b:bb:74:6f:2f:70:64:79:3e (ED25519)
+5002/tcp open  rfe?
+| fingerprint-strings:
+|   GetRequest:
+|     HTTP/1.1 200 OK
+|     Server: Werkzeug/2.1.0 Python/3.7.2
+|     Date: Sun, 03 Apr 2022 00:47:37 GMT
+|     Content-Type: text/html; charset=utf-8
+|     Content-Length: 21
+|     /{flag} to listen
+|   HTTPOptions:
+|     HTTP/1.1 200 OK
+|     Server: Werkzeug/2.1.0 Python/3.7.2
+|     Date: Sun, 03 Apr 2022 00:47:37 GMT
+|     Content-Type: text/html; charset=utf-8
+|     Allow: OPTIONS, GET, HEAD
+|     Content-Length: 0
+|   Help:
+|     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+|     "http://www.w3.org/TR/html4/strict.dtd">
+|     <html>
+|     <head>
+|     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+|     <title>Error response</title>
+|     </head>
+|     <body>
+|     <h1>Error response</h1>
+|     <p>Error code: 400</p>
+|     <p>Message: Bad request syntax ('HELP').</p>
+|     <p>Error code explanation: HTTPStatus.BAD_REQUEST - Bad request syntax or unsupported method.</p>
+|     </body>
+|     </html>
+|   RTSPRequest:
+|     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+|     "http://www.w3.org/TR/html4/strict.dtd">
+|     <html>
+|     <head>
+|     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+|     <title>Error response</title>
+|     </head>
+|     <body>
+|     <h1>Error response</h1>
+|     <p>Error code: 400</p>
+|     <p>Message: Bad request version ('RTSP/1.0').</p>
+|     <p>Error code explanation: HTTPStatus.BAD_REQUEST - Bad request syntax or unsupported method.</p>
+|     </body>
+|_    </html>
+9001/tcp open  tor-orport?
+| fingerprint-strings:
+|   GetRequest:
+|     HTTP/1.1 200 OK
+|     Server: Werkzeug/2.1.0 Python/3.8.13
+|     Date: Sun, 03 Apr 2022 00:47:32 GMT
+|     Content-Type: text/html; charset=utf-8
+|     Content-Length: 687
+|     <video autoplay muted loop id="oracle">
+|     <!-- <source src="https://github.com/iamroot99/oracle/blob/main/static/oracle.mp4" type="video/mp4"> -->
+|     <source src="./static/oracle.mp4" type="video/mp4">
+|     </video>
+|     <style>
+|     #oracle {
+|     position: fixed;
+|     right: 0;
+|     bottom: 0;
+|     min-width: 100%;
+|     min-height: 100%;
+|     transform: translateX(calc((100% - 100vw) / 2));
+|     .content {
+|     position: fixed;
+|     bottom: 0;
+|     background: rgba(0, 0, 0, 0.5);
+|     color: #f1f1f1;
+|     width: 100%;
+|     padding: 20px;
+|     </style>
+|     <div class="content">
+|     logged in. <br><a href = '/login'>Click here to log in.</a>
+|     </div>
+|   SSLSessionReq:
+|     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+|     "http://www.w3.org/TR/html4/strict.dtd">
+|     <html>
+|     <head>
+|     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+|     <title>Error response</title>
+|     </head>
+|     <body>
+|     <h1>Error response</h1>
+|     <p>Error code: 400</p>
+|     <p>Message: Bad request syntax ('
+|     &lt;=
+|     ').</p>
+|     <p>Error code explanation: HTTPStatus.BAD_REQUEST - Bad request syntax or unsupported method.</p>
+|     </body>
+|_    </html>
+9002/tcp open  dynamid?
+| fingerprint-strings:
+|   GetRequest:
+|     HTTP/1.1 200 OK
+|     Server: Werkzeug/2.1.0 Python/3.8.13
+|     Date: Sun, 03 Apr 2022 00:47:32 GMT
+|     Content-Type: text/html; charset=utf-8
+|     Content-Length: 563
+|     <style>
+|     body {
+|     background-color: #e0f9f9;
+|     </style>
+|     <div class="content">
+|     <h1> Continous Automatic Tested Enumerator </h1>
+|     <h3> Tired of having to browse so many websites in a single day? </h3>
+|     enumeration service allows you to look up any page on the web from the confort of our own app. </p>
+|     What are you waiting for? Start searching! </p>
+|     <form action = "" method = "post">
+|     URL: <input type = text name = url /> </p>
+|     <input type = submit value = SuperFastSearch /> <p>
+|     </form>
+|     </div>
+|   HTTPOptions:
+|     HTTP/1.1 200 OK
+|     Server: Werkzeug/2.1.0 Python/3.8.13
+|     Date: Sun, 03 Apr 2022 00:47:32 GMT
+|     Content-Type: text/html; charset=utf-8
+|     Allow: OPTIONS, POST, GET, HEAD
+|     Content-Length: 0
+|   RTSPRequest:
+|     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+|     "http://www.w3.org/TR/html4/strict.dtd">
+|     <html>
+|     <head>
+|     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+|     <title>Error response</title>
+|     </head>
+|     <body>
+|     <h1>Error response</h1>
+|     <p>Error code: 400</p>
+|     <p>Message: Bad request version ('RTSP/1.0').</p>
+|     <p>Error code explanation: HTTPStatus.BAD_REQUEST - Bad request syntax or unsupported method.</p>
+|     </body>
+|_    </html>
+9003/tcp open  unknown
+| fingerprint-strings:
+|   GenericLines:
+|     Alert! Alert! Agent Lee's cover has been blown! He needs immediate extraction!
+|     managed to contact us just in time and we sent a helicopter to pick him up.
+|     Unfortunately, he transmitted the wrong coordinates. To make things worse, he
+|     needs to navigate a huge maze. His position is marked with an L in the maze, while
+|     helicopter is marked with an H.
+|     extracted a satellitle image of the maze and marked the walls with #. We need
+|     find a path that agent Lee can follow in order to get to safety.
+|     Provide the path as one long line of characters L, R, U, D which symbolise taking
+|     step left, right, up or down.
+|     Example:
+|     Path (any correct solution is accepted):
+|     DRDDLDDRRRUURRDD
+|     Ready? (Y/N)Agent Lee will remember this.
+|   NULL:
+|     Alert! Alert! Agent Lee's cover has been blown! He needs immediate extraction!
+|     managed to contact us just in time and we sent a helicopter to pick him up.
+|     Unfortunately, he transmitted the wrong coordinates. To make things worse, he
+|     needs to navigate a huge maze. His position is marked with an L in the maze, while
+|     helicopter is marked with an H.
+|     extracted a satellitle image of the maze and marked the walls with #. We need
+|     find a path that agent Lee can follow in order to get to safety.
+|     Provide the path as one long line of characters L, R, U, D which symbolise taking
+|     step left, right, up or down.
+|     Example:
+|     Path (any correct solution is accepted):
+|     DRDDLDDRRRUURRDD
+|_    Ready? (Y/N)
+9004/tcp open  ssh         OpenSSH 7.6p1 Ubuntu 4ubuntu0.6 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey:
+|   2048 0b:7f:85:cd:68:51:d6:43:e2:97:53:b1:86:c4:67:34 (RSA)
+|   256 84:ec:0f:88:7e:e3:9e:32:03:61:ef:b8:77:c3:30:8d (ECDSA)
+|_  256 26:a6:70:e0:e6:53:16:e2:16:3a:d3:06:d2:c7:9c:88 (ED25519)
+9005/tcp open  ssh         OpenSSH 7.6p1 Ubuntu 4ubuntu0.6 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey:
+|   2048 e3:b3:ec:45:85:92:1a:05:47:62:1a:ab:7b:f2:12:8b (RSA)
+|   256 55:2f:37:3e:6a:37:ea:54:ed:b1:6a:24:2f:67:0b:33 (ECDSA)
+|_  256 58:4e:61:64:f9:1a:d4:ac:ed:0e:d4:6b:91:5d:02:ce (ED25519)
+9006/tcp open  ssh         OpenSSH 7.6p1 Ubuntu 4ubuntu0.6 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey:
+|   2048 dd:94:df:c5:1c:15:77:56:11:dd:50:c9:ec:8b:48:f9 (RSA)
+|   256 35:df:e5:b7:49:ef:40:ed:69:dd:af:19:a5:bf:60:38 (ECDSA)
+|_  256 b5:7d:b5:18:89:1c:5a:99:16:a5:a2:5a:b7:95:4f:2b (ED25519)
+9009/tcp open  pichat?
+| fingerprint-strings:
+|   DNSVersionBindReqTCP:
+|     Proving that I know the matrix which turns: [72, 85, 83, 84, 76, 69] into: [201, 201, 147, 24, 79, 162]
+|     commitment is: [47, 215, 131, 83, 150, 219]
+|     Enter your 6x6 challenge matrix:
+|   GenericLines, NULL:
+|     Proving that I know the matrix which turns: [72, 85, 83, 84, 76, 69] into: [201, 201, 147, 24, 79, 162]
+|     commitment is: [37, 199, 191, 136, 8, 164]
+|     Enter your 6x6 challenge matrix:
+|   GetRequest:
+|     Proving that I know the matrix which turns: [72, 85, 83, 84, 76, 69] into: [201, 201, 147, 24, 79, 162]
+|     commitment is: [48, 101, 211, 97, 56, 134]
+|     Enter your 6x6 challenge matrix:
+|   HTTPOptions:
+|     Proving that I know the matrix which turns: [72, 85, 83, 84, 76, 69] into: [201, 201, 147, 24, 79, 162]
+|     commitment is: [64, 81, 205, 145, 177, 78]
+|     Enter your 6x6 challenge matrix:
+|   RPCCheck:
+|     Proving that I know the matrix which turns: [72, 85, 83, 84, 76, 69] into: [201, 201, 147, 24, 79, 162]
+|     commitment is: [125, 57, 56, 25, 116, 159]
+|     Enter your 6x6 challenge matrix:
+|   RTSPRequest:
+|     Proving that I know the matrix which turns: [72, 85, 83, 84, 76, 69] into: [201, 201, 147, 24, 79, 162]
+|     commitment is: [211, 155, 55, 135, 189, 187]
+|_    Enter your 6x6 challenge matrix:
