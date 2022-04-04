@@ -25,3 +25,5 @@ So we then looked through the author's Facebook and looked through their photos.
 
 Scrolling down the photos we found 3 photos of a dog, [in one of the photos](https://www.facebook.com/photo/?fbid=734265183318941&set=pb.100002063996513.-2207520000..) we found the flag in the photo's caption.
 
+![Dog Photo](HannahMontanaDogPhoto.png)
+
