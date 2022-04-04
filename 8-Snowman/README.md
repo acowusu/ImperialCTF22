@@ -5,13 +5,16 @@ Challenge description: What does snow have to do with Attack on Titan?!
 Challenge category: Stego
 Challenge points: 50 (Easy)
 
+We see that we are given a text file.
+After reading the text file we realised it has a lot of strange whitespace which suggests the message is hidden in the whitespace.
+
 Snowman steganography suggests Stegsnow?
 
 Stegsnow requires a password to decode - maybe AoT
 (From the hint?)
 
-TRY:
-stegsnow -C -p 'AoT' AoT_trash_talk.txt
+So we tried to decode it using different passwords using stegsnow
+`stegsnow -C -p 'AoT' AoT_trash_talk.txt`
 
 After around 50 attempts at passwords and the hints being released we realise origins=atuthor
 
