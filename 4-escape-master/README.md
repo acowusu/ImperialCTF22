@@ -20,7 +20,7 @@ The maze was initially read as UTF-8 so we had to decode it using `.decode("UTF-
 After sending the path to the server using `io.sendline(result)` we get the flag.
 
 
-```
+```python
 from pwn import *
 
 io = connect("192.168.125.100", "9003")
