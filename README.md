@@ -5,17 +5,17 @@
 
 
 
-1. [Welcome](1-welcome/RADME.md)
-2. [Oracle](2-Oracle/README.md)
-3. [Enumerator](3-enumerator/README.md)
-4. [escape-master](4-escape-master/README.md)
-5. [RootMe1](5-RootMe1/README.md)
+1. [Welcome](1-welcome/README.md) **Completed**
+2. [Oracle](2-Oracle/README.md) **Completed**
+3. [Enumerator](3-enumerator/README.md) **Completed**
+4. [escape-master](4-escape-master/README.md) **Completed**
+5. [RootMe1](5-RootMe1/README.md) **Completed**
 6. not attempted
 7. not attempted
-8. [Snowman](8-Snowman/README.md)
+8. [Snowman](8-Snowman/README.md) **Completed**
 9. not attempted
 10. not attempted
-11. [HannahMontana](11-HannahMontana/README.md)
+11. [HannahMontana](11-HannahMontana/README.md) **Completed**
 12. not attempted
 13. [YourFilesAreMyFiles](13-YourFilesAreMyFiles/README.md)
 14. not attempted
