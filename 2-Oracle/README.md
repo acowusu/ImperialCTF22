@@ -166,4 +166,4 @@ This gave us the contents of stuff
 }
 ```
 
-we then submitted the last number as our guess and got the flag
+We then submitted the last number as our guess and got the flag

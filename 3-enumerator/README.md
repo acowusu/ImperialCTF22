@@ -2,7 +2,9 @@
 
 Opeing this page with a browser showed a page with a single input box.
 
-we speculated that the server would make a web request to the page when we clicked the button on the page.
+![picture 1](../images/README-dd73e61fe2ef76467a015b68fedc155d3d393a8f50008889bb9f08c499a7cf27.png)  
+
+We speculated that the server would make a web request to the page when we clicked the button on the page.
 
 To verify this we entered `http://localhost:9002/` in the input box and hit enter.
 
@@ -11,13 +13,20 @@ The result was the page being loaded twice.
 This potentially useful as it provided a way of accessing the server on a different
 port by making queries to localhost on different ports.  Normally we would be unable to do this as we could only access the machine on `http://192.168.125.100:9002/`
 
-The next discovery came from enetering invalid value for the url. This sent us to a `Werkzeug  traceback interpreter`.
+The next discovery came from enetering invalid value for the url. This sent us to a `Werkzeug  traceback interpreter`.![picture 2](../images/README-31cc3e56240616a79395a5ba6549a5fca82d7744ff679f82cb6894b77ab152ae.png)  
 
-looking at the error we saw that if the string `file` was within the provided url then the server would attemt to open a file rather than making a network request.
+
+
+Looking at the error we saw that if the string `file` was within the provided url then the server would attempt to open a file rather than making a network request.
+
+![picture 3](../images/README-b355ec6fd9d28f2cf4f76b992b32de307754ec0076026bdcd1ad05e9484e5404.png)  
 
 This was useful as it allowed us to see the server's internal state.
 
 One of the first things we looked at was the passwd file
+
+![picture 4](../images/README-7629975db1f301d0510d591db3d848ee4f9a4279a03de3301b1fbd629bd5d939.png)  
+
 
 ```
 root:x:0/:0:root:/root:/bin/ash
@@ -61,14 +70,15 @@ Researching `Werkzeug` further, we realised that it should be possible to access
 To identify what the pin was we looked at the the source of werkzeug - in
 particular the `__init__.py` file.
 
-We  saw that the `cgroup`, MAC address and `boot_id` were used to generate the pin.
+We saw that the `cgroup`, MAC address and `boot_id` were used to generate the pin.
 
 Using the trick from earlier we were able to access files containing these values.
 
-next we copied the contents of __init__.py to a file called `fakeinit.py` and
-substituded the values for the cgroup, MAC address and boot_id, as well as some
-other values which we were able to make infomed guessed about - such as the
- username wich we guessed to be root.
+
+Next we copied the contents of __init__.py to a file called `fakeinit.py` and
+substituted the values for the `cgroup`, MAC address and `boot_id`, as well as some
+other values which we were able to make informed guessed about - such as the
+ username which we guessed to be `root`.
 
 Executing this script gave us a pin:
   
@@ -78,6 +88,8 @@ python ./3-enumerator/fakeinit.py
 ```
 
 We then entered this pin into Werkzeug  and we were able to access a python console.
+![picture 5](../images/README-3f77f0b1ced0e9327b8262d92e2c746794e08369a31c0d1690b88a45dd82c926.png)  
+
 
 To get the flag we ran the following command:
 
