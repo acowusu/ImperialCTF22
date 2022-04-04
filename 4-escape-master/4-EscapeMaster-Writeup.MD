@@ -5,6 +5,19 @@
 **Challenge category:** Misc <br>
 **Challenge points:** 75 (Easy) <br>
 
+We first connect to the server using `nc 192.168.125.100 9003`
+and we are presented with the following message:
+
+We first tried entering a path manually, however there is a time limit of about 1 second which meant that manual solutions were not possible as the maze is 50x50 and randomised each time.
+
+So we created a maze traversal algorithm in Python using BFS, backtracking once we reach the destination to get the string of directions.
+We used `pwntools` to connect to the server and do IO.
+
+The maze was initially read as UTF-8 so we had to decode it using `.decode("UTF-8")`
+
+After sending the path to the server using `io.sendline(result)` we get the flag.
+
+
 ```
 from pwn import *
 
