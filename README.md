@@ -27,7 +27,7 @@
 20. not attempted
 
 
-## mission
+## Mission
 
 Before we begin, here are some more details:
 
@@ -37,11 +37,9 @@ We recommend that you start with the easy ones and slowly build your way up towa
 
 There are three levels of difficulty:
 
-    Easy - 50 / 75 points
-
-    Medium - 100 points
-
-    Hard - 200 points
+* Easy - 50 / 75 points
+* Medium - 100 points
+* Hard - 200 points
 
 While harder problems are intended to have fewer solves, the moderators may release hints that should point you in the right direction. All hints will be released on our Discord server.
 
@@ -55,7 +53,7 @@ Without further ado, let the hacking begin!
 
 1. All teams can have at most 5 members. No external help!
 1. The top 15 teams will qualify for the on-sight finals & conference.
-1. The top 20 teams are required to submit write-ups to doc-ctf@imperial.co.uk before 04 April, 13:00 BST.
+1. The top 20 teams are required to submit write-ups to `doc-ctf@imperial.co.uk` before `04 April, 13:00 BST`.
 1. All qualified teams will be required to provide proof of their student status in order to be eligible to participate in the finals. We will contact you via the team email.
 1. Looking things up on the internet is completely fine and expected.
 1. Time will decide the scoreboard in case of ties.
