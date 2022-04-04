@@ -1,18 +1,18 @@
 # 5 - Root Me 1
 
-CTF name: Imperial CTF 22 Qualifiers
-Challenge name: Root Me 1
-Challenge category: Boot2Root
-Challenge points: 50 (Easy)
+**CTF name:** Imperial CTF 22 Qualifiers<br>
+**Challenge name:** Root Me 1<br>
+**Challenge category:** Boot2Root<br>
+**Challenge points:** 50 (Easy)<br>
 
 We ssh to the server using:
 `ssh user@192.168.125.100 -p 9005`
 
 and login with the given username `user` and password `h4ck3r`
 
-We find in the home directory the file `flag.txt` but it does not have read permissions.
+We find in the `/usr` directory the file `flag.txt` but it does not have read permissions.
 
-Thus the goal is to escalate privileges.
+Thus the goal is to escalate privileges in order to change the permission.
 
 We check if there are any sudo commands that user is allowed to execute using the command
 `sudo -l`
