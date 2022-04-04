@@ -19,6 +19,6 @@ Author of Attack on Titan is Hajime Isayama
 
 xyz000th attempt:
 
-(https://user-images.githubusercontent.com/51130635/161524933-ef4f72ef-3247-48dc-80c9-fdebfe2bd1bc.jpeg)
+!(https://user-images.githubusercontent.com/51130635/161524933-ef4f72ef-3247-48dc-80c9-fdebfe2bd1bc.jpeg)
 
 Letsssgoooo
