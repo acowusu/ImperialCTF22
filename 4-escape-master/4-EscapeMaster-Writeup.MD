@@ -8,6 +8,8 @@
 We first connect to the server using `nc 192.168.125.100 9003`
 and we are presented with the following message:
 
+![Escape Master Display](EscapeMasterScreenshot.png)
+
 We first tried entering a path manually, however there is a time limit of about 1 second which meant that manual solutions were not possible as the maze is 50x50 and randomised each time.
 
 So we created a maze traversal algorithm in Python using BFS, backtracking once we reach the destination to get the string of directions.
